@@ -24,7 +24,7 @@ app.post('/api/shorten', async (req, res) => {
         const newUrl = new Url({ longUrl, shortUrlCode });
         await newUrl.save(); // Saves to cloud database
 
-        res.json({ shortUrl: `http://localhost:5000/${shortUrlCode}` });
+        res.json({ shortUrl: `https://smart-link-shortener.onrender.com/${shortUrlCode}` });
     } catch (err) {
         res.status(500).json({ error: 'Server Error occurred' });
     }
